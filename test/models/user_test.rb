@@ -13,7 +13,7 @@ class UserTest < ActiveSupport::TestCase
 
   test 'user with not unique password should be invalid' do
     other_user = users(:one)
-    user = User.new(email: other_user.email, password_digest: other_user.password)
+    user = User.new(email: other_user.email, password_digest: 'hashed_password')
     assert_not user.valid?
   end
 end

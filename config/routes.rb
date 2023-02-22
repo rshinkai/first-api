@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
     # TODO: list resources here
+      resources :users, only: [:show]
     end
   end
 end
