@@ -1,7 +1,19 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'user with valid email should be valid' do
+    user = User.new(email: 'test@test.com', password: 'hashed_password')
+    assert user.valid?
+  end
+
+  test 'user with invalid email should be invalid' do
+    user = User.new(email: 'test', password: 'hashed_password')
+    assert_not user.valid?
+  end
+
+  test 'user with not unique password should be invalid' do
+    other_user = users(:one)
+    user = User.new(email: other_user.email, password: other_user.password)
+    assert_not user.valid?
+  end
 end
