@@ -3,5 +3,9 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates_format_of :email, with:/@/
     # presence checks not empty
-    validates :password, presence: true
+    validates :password_digest, presence: true
+
+    # method to produce secured password
+    # need to set password_digest attribute
+    has_secure_password
 end
