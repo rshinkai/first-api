@@ -1,6 +1,6 @@
 RAILS := rails
 
-.PHONY: run test db-cli console
+.PHONY: run test db-cli console migrate-reset
 
 run:
 	$(RAILS) s
@@ -14,5 +14,5 @@ db-cli:
 console:
 	$(RAILS) console
 
-migrate-reset
+migrate-reset:
 	$(RAILS) db:migrate:reset
