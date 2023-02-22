@@ -13,3 +13,6 @@ db-cli:
 
 console:
 	$(RAILS) console
+
+migrate-reset
+	$(RAILS) db:migrate:reset
