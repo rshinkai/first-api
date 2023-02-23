@@ -8,4 +8,6 @@ class User < ApplicationRecord
     # method to produce secured password
     # need to set password_digest attribute
     has_secure_password
+
+    has_many :products, dependent: :destroy
 end
