@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       
       # Only need POST request
       resources :tokens, only: [:create]
+
+      resources :products
     end
   end
 end
