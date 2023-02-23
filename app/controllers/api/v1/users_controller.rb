@@ -6,7 +6,8 @@ class Api::V1::UsersController < ApplicationController
     def show
         # response format is JSON
         # params[:id] comes from path param like api/:id
-        render json: UserSerializer.new(@user).serializable_hash.to_json
+        options = { include: [:products] }
+        render json: UserSerializer.new(@user, options).serializable_hash.to_json
     end
 
     # POST /users
