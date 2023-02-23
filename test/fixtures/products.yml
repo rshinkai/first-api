@@ -5,15 +5,18 @@ one:
   price: 9999.99
   published: false
   user: one
+  quantity: 5
 
 two:
   title: MacBook
   price: 499.99
   published: false
   user: two
+  quantity: 5
 
 three:
   title: Medium TV
   price: 99.99
   published: false
   user: two
+  quantity: 5
