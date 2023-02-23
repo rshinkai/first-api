@@ -11,6 +11,6 @@ class JsonWebToken
     # enabled to handle by Symbol or String
     def self.decode(token)
         decoded = JWT.decode(token, SECRET_KEY).first
-        HashWithIndifferentAccess.new.decoded
+        HashWithIndifferentAccess.new decoded
     end
 end

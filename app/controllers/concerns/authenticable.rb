@@ -6,6 +6,6 @@ module Authenticable
         header = request.headers['Authorization']
         return nil if header.nil?
         decoded = JsonWebToken.decode(header)
-        @current_user = User.find(decode[:user_id]) rescue ActiveRecode::RecodeNotFound
+        @current_user = User.find(decoded[:user_id]) rescue ActiveRecode::RecodeNotFound
     end
 end
